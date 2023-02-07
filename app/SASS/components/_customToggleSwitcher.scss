@@ -1,0 +1,41 @@
+@use "../base/functions" as func;
+@use "../abstracts/colors" as c;
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as *;
+
+.input-container {
+  position: relative;
+  background: c.$light-grayish-blue-2;
+  @include flex(row, center, center);
+  width: fit-content;
+  height: func.rem(15.5);
+  width: v.$input-width;
+  padding: v.$input-circle-padding;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: v.$main-transition;
+  &.active {
+    background: c.$strong-cyan;
+  }
+}
+
+.input-circle {
+  position: absolute;
+  left: 0;
+  width: v.$input-circle-height;
+  height: v.$input-circle-height;
+  background: c.$white;
+  border-radius: 50%;
+  translate: v.$input-circle-padding;
+  transition: v.$main-transition;
+}
+
+.radio-input {
+  margin: 0;
+  appearance: none;
+}
+
+.radio-input-label {
+  cursor: pointer;
+}

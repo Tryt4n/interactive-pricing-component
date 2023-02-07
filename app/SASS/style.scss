@@ -1,0 +1,234 @@
+@forward "./base/index";
+@forward "./components/index";
+
+@use "./base/functions" as func;
+@use "./abstracts/colors" as c;
+@use "./abstracts/variables" as v;
+@use "./abstracts/mixins" as *;
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: c.$very-pale-blue;
+  @include flex(row, center, center);
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-image: url("/app/images/bg-pattern.svg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+.pricing-component {
+  width: func.rem(600);
+  color: c.$grayish-blue;
+
+  & .outer-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+    text-align: center;
+
+    &__header {
+      color: c.$dark-desaturated-blue;
+      margin-bottom: 1rem;
+    }
+
+    &__subheader {
+      color: c.$grayish-blue;
+    }
+
+    &::after {
+      position: absolute;
+      content: url("/app/images/pattern-circles.svg");
+      left: 50%;
+      top: 0;
+      translate: -50% -25%;
+      z-index: -1;
+    }
+  }
+
+  & .main-container {
+    background: c.$white;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 0 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px func.rem(7) func.rem(29) 0px;
+  }
+
+  & .plan-container {
+    position: relative;
+
+    &__views {
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+      font-weight: bold;
+      @media (width >= 768px) {
+        margin-top: 2rem;
+      }
+    }
+
+    &__price-wrap {
+      @include flex(row, center, center);
+      @media (width >= 768px) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        translate: 0 -35%;
+      }
+    }
+
+    &__price {
+      font-size: 3rem;
+      color: c.$dark-desaturated-blue;
+    }
+
+    &__period {
+      padding-left: 0.5rem;
+    }
+  }
+
+  & .range-container {
+    margin: 3rem 1rem;
+    z-index: 0;
+    gap: 1rem;
+  }
+
+  & .toggle-switch-container {
+    @include flex(row, flex-end, center);
+    padding-right: 2rem;
+    font-size: func.rem(14);
+
+    &__discount {
+      background: c.$light-grayish-red;
+      color: c.$light-red;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      margin-left: -0.5rem;
+    }
+  }
+
+  & hr {
+    border: none;
+    border-bottom: func.rem(1) solid c.$light-grayish-blue-1;
+    margin: 3rem -2rem;
+  }
+
+  & .trial-container {
+    @include flex(row, space-between, center);
+
+    & .list-style {
+      &__item {
+        position: relative;
+        list-style: none;
+
+        &::before {
+          position: absolute;
+          content: url("/app/images/icon-check.svg");
+          left: 0;
+          top: 0;
+          translate: -100% -10%;
+          padding-right: 1rem;
+          line-height: func.rem(22);
+          scale: 1.25;
+        }
+      }
+    }
+  }
+}
+
+@media (width < 768px) {
+  body::before {
+    background-image: none;
+    background: c.$light-grayish-blue-1;
+  }
+  .pricing-component {
+    width: 100vw;
+
+    & .outer-container {
+      padding-bottom: 3rem;
+
+      &__header {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+      }
+
+      &__subheader {
+        font-size: clamp(0.7rem, 3vw, func.rem(15));
+      }
+    }
+
+    & .main-container {
+      padding: 2rem 1rem;
+    }
+
+    .plan-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @include flex(column, center, center);
+      &__views {
+        order: 1;
+      }
+
+      & .range-container {
+        order: 2;
+        width: 100%;
+      }
+
+      &__price-wrap {
+        position: static;
+        order: 3;
+      }
+
+      &__price {
+        font-size: 2rem;
+      }
+
+      &__period {
+        font-size: 0.8rem;
+      }
+    }
+
+    & .toggle-switch-container {
+      margin-top: 2rem;
+      padding-right: 0;
+      margin-right: -1rem;
+      gap: 0.5rem;
+
+      & label {
+        width: fit-content;
+        font-size: clamp(func.rem(10), 3vw, 1rem);
+      }
+
+      &__discount {
+        font-size: clamp(func.rem(10), 3vw, 1rem);
+        margin: 0 0.5rem;
+      }
+    }
+
+    & hr {
+      margin: 2rem -2rem;
+    }
+
+    & .trial-container {
+      flex-direction: column;
+      gap: 2rem;
+
+      & .list-style {
+        margin: 0;
+        width: 100%;
+        @include flex(column, center, center);
+        gap: 0.75rem;
+      }
+    }
+  }
+}

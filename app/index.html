@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/style.css" />
+    <script src="script/script.js" type="module"></script>
+    <title>Interactive Pricing Component</title>
+  </head>
+  <body>
+    <main>
+      <section class="pricing-component">
+        <div class="outer-container">
+          <h1 class="outer-container__header">Simple, traffic-based pricing</h1>
+          <p class="outer-container__subheader">
+            Sign-up for our 30-day trial. No credit card required.
+          </p>
+        </div>
+
+        <div class="main-container">
+          <div class="plan-container">
+            <p class="plan-container__views" data-package>100k pageviews</p>
+            <p class="plan-container__price-wrap">
+              <strong class="plan-container__price" data-price>$16.00</strong>
+              <span class="plan-container__period">/month</span>
+            </p>
+
+            <div class="range-container">
+              <label
+                id="range-label"
+                for="range-input"
+                aria-label="Customize your package"
+                data-range-label
+              ></label>
+              <input
+                class="slider"
+                type="range"
+                min="1"
+                max="100"
+                value="50"
+                name="range-input"
+                id="range-input"
+                aria-labelledby="range-label"
+                data-range-input
+              />
+              <div class="track"></div>
+            </div>
+          </div>
+
+          <div class="toggle-switch-container">
+            <label for="monthly" id="monthly-label" class="radio-input-label"
+              >Monthly Billing</label
+            >
+            <div class="input-container" data-toggle-switcher>
+              <input type="radio" name="billing-plan" id="monthly" class="radio-input" />
+              <input type="radio" name="billing-plan" id="yearly" class="radio-input" />
+              <span
+                class="input-circle"
+                role="switch"
+                aria-labelledby="monthly-label yearly-label"
+                aria-label="Yearly/Monthly toggle switch"
+                data-input-circle
+              ></span>
+            </div>
+            <label for="yearly" id="yearly-label" class="radio-input-label">Yearly Billing</label>
+            <p class="toggle-switch-container__discount" data-discount></p>
+          </div>
+
+          <hr />
+
+          <div class="trial-container">
+            <ul class="list-style" aria-label="Package Benefits">
+              <li class="list-style__item">Unlimited websites</li>
+              <li class="list-style__item">100% data ownership</li>
+              <li class="list-style__item">Email reports</li>
+            </ul>
+            <button class="btn btn--primary">Start my trial</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

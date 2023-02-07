@@ -1,0 +1,7 @@
+@use "../base/functions" as func;
+
+$main-transition: 300ms ease-in-out;
+
+$input-width: func.rem(40);
+$input-circle-height: func.rem(15);
+$input-circle-padding: 0.25rem;

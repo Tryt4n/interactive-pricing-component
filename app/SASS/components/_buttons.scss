@@ -1,0 +1,29 @@
+@use "../base/functions" as func;
+@use "../abstracts/colors" as c;
+@use "../abstracts/variables" as v;
+
+.btn {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.75rem 3rem;
+  border-radius: 9999px;
+  transition: v.$main-transition;
+
+  &--primary {
+    background: c.$dark-desaturated-blue;
+    color: c.$pale-blue;
+    opacity: 0.95;
+
+    &:hover,
+    &:focus {
+      color: c.$white;
+      opacity: 1;
+      box-shadow: c.$dark-desaturated-blue 0px func.rem(2) func.rem(10) 0px;
+    }
+  }
+}

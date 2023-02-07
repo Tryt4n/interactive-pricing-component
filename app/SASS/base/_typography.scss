@@ -1,0 +1,11 @@
+@use "./functions" as func;
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: func.rem(15);
+}
