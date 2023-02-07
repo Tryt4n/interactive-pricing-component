@@ -106,6 +106,7 @@ body {
     @include flex(row, flex-end, center);
     padding-right: 2rem;
     font-size: func.rem(14);
+    gap: 1rem;
 
     &__discount {
       background: c.$light-grayish-red;
