@@ -298,6 +298,7 @@ body::before {
   align-items: center;
   padding-right: 2rem;
   font-size: 0.875rem;
+  gap: 1rem;
 }
 .pricing-component .toggle-switch-container__discount {
   background: hsl(14deg, 92%, 95%);
