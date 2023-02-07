@@ -67,7 +67,7 @@ p {
   width: 3.75rem;
   height: 3.75rem;
   border: 0;
-  background-image: url("app/images/icon-slider.svg");
+  background-image: url("/app/images/icon-slider.svg");
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 101;
@@ -96,7 +96,7 @@ p {
   border: 0;
   background: transparent;
   border-radius: 50%;
-  background-image: url("app/images/icon-slider.svg");
+  background-image: url("/app/images/icon-slider.svg");
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 101;
@@ -121,7 +121,7 @@ p {
   width: 3.75rem;
   height: 3.75rem;
   border: 0;
-  background-image: url("app/images/icon-slider.svg");
+  background-image: url("/app/images/icon-slider.svg");
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 101;
@@ -210,7 +210,7 @@ body {
 body::before {
   position: absolute;
   content: "";
-  background-image: url("app/images/bg-pattern.svg");
+  background-image: url("/app/images/bg-pattern.svg");
   background-position: top;
   background-repeat: no-repeat;
   background-size: contain;
@@ -239,7 +239,7 @@ body::before {
 }
 .pricing-component .outer-container::after {
   position: absolute;
-  content: url("app/images/pattern-circles.svg");
+  content: url("/app/images/pattern-circles.svg");
   left: 50%;
   top: 0;
   translate: -50% -25%;
@@ -324,7 +324,7 @@ body::before {
 }
 .pricing-component .trial-container .list-style__item::before {
   position: absolute;
-  content: url("app/images/icon-check.svg");
+  content: url("/app/images/icon-check.svg");
   left: 0;
   top: 0;
   translate: -100% -10%;

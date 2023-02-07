@@ -16,7 +16,7 @@ body {
   &::before {
     position: absolute;
     content: "";
-    background-image: url("app/images/bg-pattern.svg");
+    background-image: url("/app/images/bg-pattern.svg");
     background-position: top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -48,7 +48,7 @@ body {
 
     &::after {
       position: absolute;
-      content: url("app/images/pattern-circles.svg");
+      content: url("/app/images/pattern-circles.svg");
       left: 50%;
       top: 0;
       translate: -50% -25%;
@@ -133,7 +133,7 @@ body {
 
         &::before {
           position: absolute;
-          content: url("app/images/icon-check.svg");
+          content: url("/app/images/icon-check.svg");
           left: 0;
           top: 0;
           translate: -100% -10%;
