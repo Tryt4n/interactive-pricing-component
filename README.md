@@ -1,5 +1,7 @@
 # Frontend Mentor - Interactive pricing component
 
+[Link to the page](https://interactive-pricing-component-custom.netlify.app/app/)
+
 ![Design preview for the Interactive pricing component coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
